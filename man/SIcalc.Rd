@@ -8,7 +8,8 @@ SIcalc(SI, input.proj)
 }
 \arguments{
 \item{SI}{matrix of suitability curves ordered as parameter breakpoints and
-associated suitability indices for each parameter.}
+associated suitability indices for each parameter. Note that users should 
+enter NA for excluded variables in HSImodels.}
 
 \item{input.proj}{numeric or categorical vector of application-specific input
 parameters associated with the suitability curve data from SI.}

@@ -4,7 +4,7 @@
 \alias{HSIeqtn}
 \title{Computes Habitat Suitability Index based on Model-Specified Equation}
 \usage{
-HSIeqtn(HSImodelname, SIV, HSImetadata)
+HSIeqtn(HSImodelname, SIV, HSImetadata, exclude = NULL)
 }
 \arguments{
 \item{HSImodelname}{a character string in quotations that must match an existing model
@@ -13,6 +13,8 @@ name in HSImetadata.}
 \item{SIV}{a vector of suitability index values used in the model specified in HSImodelname.}
 
 \item{HSImetadata}{a data frame of HSI model metadata within the ecorest package.}
+
+\item{exclude}{a list of character strings specifying components to be excluded from calculations.}
 }
 \value{
 A numeric of the habitat suitability index ranging from 0 to 1.
@@ -38,7 +40,7 @@ HSIeqtn("barredowl", c(0,1,1), HSImetadata) #c(0,1,1) should result in 0.00
 HSIeqtn("barredowl", c(0,NA,1), HSImetadata) #c(0,NA,1) should return error message
 HSIeqtn("barredowl", c(NA,1,1,1), HSImetadata) #c(NA,1,1,1) should return error message
 
-#Compute patch quality for the Juvenile Alewide mode (two components)
+#Compute patch quality for the Juvenile Alewife model (two components)
 #Pardue, G.B. 1983. Habitat Suitability index models: alewife and blueback herring.
 #U.S. Dept. Int. Fish Wildl. Serv. FWS/OBS-82/10.58. 22pp.
 #Suitability indices relate to zooplankton density, salinity, and water temperature
@@ -48,6 +50,24 @@ HSIeqtn("alewifeJuv", c(0.5,1,1), HSImetadata) #c(0.5,1,1) should result in 0.50
 HSIeqtn("alewifeJuv", c(0,1,1), HSImetadata) #c(0,1,1) should result in 0.00
 HSIeqtn("alewifeJuv", c(1,NA,1), HSImetadata) #c(1,NA,1) returns error message
 HSIeqtn("alewifeJuv", c(1,1,1,NA), HSImetadata) #c(1,1,1,NA) returns error message
+
+#Compute patch quality for Cutthroat trout model for lacustrine habitats (7 components)
+#with spawning and lacustrine habitat and with only lacustrine habitat (i.e., 
+#embryo component is excluded).
+#Hickman, T., and R.F. Raleigh. 1982. Habitat suitability index models: 
+#Cutthroat trout. U.S.D.I. Fish and Wildlife Service. FWS/OBS-82/10.5. 38 pp.
+#Suitability indices relate to temperature during the warmest period of the year,
+#maximum temperature during embryo development, minimum dissolved oxygen during
+#the late growing season, average velocity over spawning areas, average size 
+#of substrate in spawning areas, annual maximal or minimal pH, and percent fines
+#in the spawning area.
+#Example suitability vectors are c(1,1,1,1,1,1,1), c(0.5,1,0.5,0,1,1,1) and c(1,NA,0.5,NA,NA,0.5,NA)
+#c(1,1,1,1,1,1,1) should result in 1
+HSIeqtn("cutthroatLacGenLtoe15C", c(1,1,1,1,1,1,1), HSImetadata) 
+#c(0.5,1,0.5,0,1,1,1) should result in 0
+HSIeqtn("cutthroatLacGenLtoe15C", c(0.5,1,0.5,0,1,1,1), HSImetadata) 
+#c(1,NA,0.5,NA,NA,0.5,NA) should result in 0.63
+HSIeqtn("cutthroatLacGenLtoe15C", c(1,NA,0.5,NA,NA,0.5,NA), HSImetadata, exclude=c("CE")) 
 
 }
 \references{

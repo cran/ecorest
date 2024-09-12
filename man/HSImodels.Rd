@@ -4,19 +4,24 @@
 \name{HSImodels}
 \alias{HSImodels}
 \title{Habitat suitability index (HSI) models}
-\format{An object of class \code{list} of length 519.}
+\format{
+An object of class \code{list} of length 351.
+}
 \source{
-\url{https://pubs.er.usgs.gov/}
+\url{https://pubs.usgs.gov/}
 }
 \usage{
 HSImodels
 }
 \description{
-This list of data frames contains 519 U.S. Fish and Wildlife Service
- Habitat suitability index (HSI) models
+This list of data frames contains 351 U.S. Fish and Wildlife Service
+ Habitat suitability index (HSI) models. Please note that some of the original 
+ HSI documents provide little reference data for constructing suitability curves;
+ hence, some suitability curves are estimated using the authors' best judgement. 
+ Users should always cross-reference results with the original documentation.
 }
 \details{
-@format A list with 519 data frames each containing an HSI model with multiple
+@format A list with 351 data frames each containing an HSI model with multiple
    independent variables and associated habitat suitability indices (a 0 to 1 value).
    Data represent break points in curves with linear extrapolation between.
    Categorical input variables are coded as letters.
