@@ -1,10 +1,10 @@
 Package: ecorest
 Title: Conducts Analyses Informing Ecosystem Restoration Decisions
-Version: 2.0.0
+Version: 2.0.1
 Authors@R: 
     c(person(given = "S. Kyle", family = "McKay",
            role = c("aut", "cre"),
-           email = "kyle.mckay@usace.army.mil",
+           email = "skmckay@gmail.com",
            comment = c(ORCID = "0000-0003-2703-3841")),
       person(given = "Darixa D.", family = "Hernandez-Abrams",
            role = c("aut"),
@@ -29,10 +29,11 @@ LazyData: true
 Imports: viridis, stats, graphics, grDevices
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2024-09-12 19:39:51 UTC; u4eevskm
-Author: S. Kyle McKay [aut, cre] (<https://orcid.org/0000-0003-2703-3841>),
+Packaged: 2025-09-19 12:38:41 UTC; RDEL1KCC
+Author: S. Kyle McKay [aut, cre] (ORCID:
+    <https://orcid.org/0000-0003-2703-3841>),
   Darixa D. Hernandez-Abrams [aut],
   Kiara C. Cushway [aut]
-Maintainer: S. Kyle McKay <kyle.mckay@usace.army.mil>
+Maintainer: S. Kyle McKay <skmckay@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-09-12 21:50:02 UTC
+Date/Publication: 2025-09-19 13:40:07 UTC

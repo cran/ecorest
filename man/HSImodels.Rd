@@ -5,7 +5,7 @@
 \alias{HSImodels}
 \title{Habitat suitability index (HSI) models}
 \format{
-An object of class \code{list} of length 351.
+An object of class \code{list} of length 349.
 }
 \source{
 \url{https://pubs.usgs.gov/}
